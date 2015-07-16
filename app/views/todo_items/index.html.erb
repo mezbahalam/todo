@@ -12,10 +12,11 @@
       </td>
       <td>
 
-      <td><%= todo_item.content %></td>
+      <td><%= todo_item.content %>
 
       <%= link_to "Edit", edit_todo_list_todo_item_path(todo_item) %>
-      <%= link_to "Delete", todo_list_todo_item_path(todo_item), method: :delete, data: { confirm: "Are you sure?" } %></td>
+      <%= link_to "Delete", todo_list_todo_item_path(todo_item), method: :delete, data: { confirm: "Are you sure?" } %>
+      </td>
     </tr>
   <% end %>
 </table>

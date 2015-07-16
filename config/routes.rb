@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :users
   root "todo_lists#index"
   resources :todo_lists do
     resources :todo_items do
