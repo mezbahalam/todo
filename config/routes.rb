@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-
   resources :users
+  resources :user_sessions, only: [:new, :create ]
+
   root "todo_lists#index"
   resources :todo_lists do
     resources :todo_items do
