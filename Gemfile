@@ -22,8 +22,17 @@ group :development, :test do
 
   gem 'capybara'
   gem 'capybara-email'
+
+
+end
+
+group :development do
+  gem 'spring'
+  gem 'quiet_assets'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bcrypt-ruby'
+
+gem 'foundation-rails'
