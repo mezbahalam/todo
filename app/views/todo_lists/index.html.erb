@@ -1,31 +1,17 @@
-<p id="notice"><%= notice %></p>
+<h2 class="page-title">Todo Lists</h2>
 
-<h1>Listing Todo Lists</h1>
+<ul class="todo-lists no-bullet">
+<% @todo_lists.each do |todo_list| %>
+    <li id="<%= dom_id(todo_list)  %>" class="clearfix">
+      <%= link_to todo_list_todo_items_path(todo_list), class: "row" do %>
+        <div class="small-10 medium-11 columns truncate" title="<%= todo_list.title %>"><%= todo_list.title %></div>
+        <div class="small-2 medium-1 columns"><span class="label round"><%= todo_list.todo_items.size %></span></div>
+      <% end %>
+    </li>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @todo_lists.each do |todo_list| %>
-      <tr id="<%= dom_id(todo_list)  %>">
-        <td><%= todo_list.title %></td>
-
-        <td>
-          <%= link_to 'List Items', todo_list_todo_items_path(todo_list)  %>
-          <%= link_to 'Show', todo_list %>
-          <%= link_to 'Edit', edit_todo_list_path(todo_list) %>
-          <%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
     <% end %>
-  </tbody>
-</table>
 
-<br>
+</ul>
+
 
 <%= link_to 'New Todo list', new_todo_list_path %>
